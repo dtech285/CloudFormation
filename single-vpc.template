@@ -363,32 +363,6 @@
      }
    },
 
-   "Resources" : {
-      "MyGNS3Instance" : {
-         "Type" : "AWS::EC2::Instance",
-         "Properties" : {
-            "ImageId" : "ami-16efb076",
-            "BlockDeviceMappings" : [
-               {
-                  "DeviceName" : "/dev/sdm",
-                  "Ebs" : {
-                     "VolumeType" : "io1",
-                     "Iops" : "200",
-                     "DeleteOnTermination" : "false",
-                     "VolumeSize" : "20"
-                  }
-               },
-               {
-                  "DeviceName" : "/dev/sdk",
-                  "NoDevice" : {}
-               }
-            ]
-         }
-      }
-   }
-
- },
-
  "Outputs" : {
    "URL" : {
      "Value" : { "Fn::Join" : [ "", ["http://", { "Fn::GetAtt" : ["", "PublicIp"] }]]},
